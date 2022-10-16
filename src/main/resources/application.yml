@@ -1,0 +1,17 @@
+server:
+  port: 8081
+
+spring:
+  rabbitmq:
+    url: amqp://consumer:consumer@localhost:5672
+    queue: spring_queue
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: spring-rabbit
+      username: consumer-rw
+      password: root
+
+# user: consumer-rw
+# pwd: root
