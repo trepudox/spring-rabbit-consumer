@@ -29,9 +29,9 @@ public class PersonController {
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<?> getById(@PathVariable Long id) {
-        Mono<Person> personMono = personService.getById(id);
+    @GetMapping("/{objectId}")
+    public ResponseEntity<?> getById(@PathVariable String objectId) {
+        Mono<Person> personMono = personService.getById(objectId);
         Mono<PersonResponse> response = personMono.map(PersonMapper.INSTANCE::personToPersonResponse);
 
         return ResponseEntity.status(HttpStatus.OK).body(response);

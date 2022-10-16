@@ -6,11 +6,11 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
-@Document
+@Document("person")
 public class Person {
 
     @Id
-    private Long id;
+    private ObjectId id;
     private String name;
     private int age;
 
